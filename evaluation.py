@@ -104,6 +104,7 @@ def evaluate_by_metrics(song_name):
         estimated_sources = np.array(list(estimated_sources_audio.values()))
         original_sources = np.array(list(original_sources_audio.values()))
 
+        mir_eval.separation.validate(original_sources, estimated_sources)
         (sdr, sir, _, _) = mir_eval.separation.bss_eval_sources(original_sources, estimated_sources)
 
         results={}
