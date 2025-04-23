@@ -1,6 +1,7 @@
 songs/
 songs.zip
-__pycache__/evaluations_for_plots.cpython-310.pyc
+__pycache__/
 evaluation.csv
 Python-3.10.13.tgz
 Python-3.10.13
+.idea/

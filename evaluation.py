@@ -73,7 +73,7 @@ def get_seperated_files(folder_path, length):
     return sources_files
 
 
-def evaluate_by_metrics(song_name):
+def evaluate_by_metrics(song_name, original_dir_name="originals", estimated_dir_name="estimated"):
     """
     Computes SDR and SIR by comparing the original mix to separated sources.
 
@@ -83,8 +83,8 @@ def evaluate_by_metrics(song_name):
     :return: Dictionary with SDR and SIR results for each source.
     """
     song_path=f'songs/{song_name}'
-    original_sources_path=f'{song_path}/originals'
-    estimated_sources_path=f'{song_path}/estimated'
+    original_sources_path=f'{song_path}/{original_dir_name}'
+    estimated_sources_path=f'{song_path}/{estimated_dir_name}'
 
     try:
         if not os.path.exists(original_sources_path) or not os.path.exists(estimated_sources_path):
@@ -114,4 +114,4 @@ def evaluate_by_metrics(song_name):
 
         return results
     except FileNotFoundError:
-        print(f"I couldn't find the music files of the given song. please ensure you have the song directory with the correct name and ddata as the instructions")
+        print(f"I couldn't find the music files of the given song. please ensure you have the song directory with the correct name and data as the instructions")
